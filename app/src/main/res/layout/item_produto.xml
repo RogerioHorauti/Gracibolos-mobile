@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    android:background=""
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dip" >
+
+    <!--
+        ListRow Left sied Thumbnail image
+         android:background=""
+         android:src=""
+    -->
+    <LinearLayout android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dip">
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            />
+
+    </LinearLayout>
+
+    <!--
+        Title Of Song
+        android:id="@+id/title"
+        android:text="Rihanna Love the way lie"
+    -->
+    <TextView
+        android:id="@+id/text_view_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:textColor="#040404"
+        android:typeface="sans"
+        android:textSize="15dip"
+        android:textStyle="bold"/>
+
+    <!--
+        Artist Name
+        android:id="@+id/artist"
+        android:text="Just gona stand there and ..."
+    -->
+    <TextView
+        android:id="@+id/text_view_obs"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_nome"
+        android:textColor="#343434"
+        android:textSize="10dip"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail"
+         />
+
+    <!--
+        Rightend Duration
+        android:id="@+id/duration"
+        android:text="5:45"
+    -->
+    <TextView
+        android:id="@+id/text_view_valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/text_view_obs"
+        android:gravity="right"
+        android:layout_marginRight="5dip"
+        android:textSize="10dip"
+        android:textColor="#000"
+        android:textStyle="bold"/>
+
+    <!--
+    Rightend Arrow
+    android:src=""
+    -->
+    <ImageView android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>
