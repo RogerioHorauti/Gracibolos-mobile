@@ -28,7 +28,7 @@ public class Produto {
         private double custo;
         private double valor;
         private String obs;
-
+        private  String receita;
 
         public Produto() {
         }
@@ -151,4 +151,11 @@ public class Produto {
             this.obs = obs;
         }
 
+        public String getReceita() {
+            return receita;
+        }
+
+        public void setReceita(String receita) {
+            this.receita = receita;
+        }
 }

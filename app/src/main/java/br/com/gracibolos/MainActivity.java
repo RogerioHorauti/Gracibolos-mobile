@@ -1,7 +1,5 @@
 package br.com.gracibolos;
 
-import android.app.Activity;
-import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
@@ -34,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     private String msg = "";
     private List<Produto> listaProdutos = null;
-    private String [] nomeProdutos = null;
     private ProgressDialog pDialog;
     private ListView listView;
     Produto p;
@@ -46,11 +41,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Título da Toolbar
+        //
         toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
-        //toolbar.setTitle("Produtos");
         setSupportActionBar(toolbar);
 
+        //
         actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -73,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 //neste método concatena a string de msg e retorna a lista de produtos List<Produto>
                 for(Produto p : listaProdutos)
                 {
-                    msg += "Nome : "+ p.getNome()+", ";
+                    msg += "Nome : "+ p.getNome()+"\n";
                 }
                 //textView.setText(msg);
                 Log.i("rest", msg);
@@ -97,6 +92,11 @@ public class MainActivity extends AppCompatActivity {
                         Intent it = new Intent(MainActivity.this, ProdutoActivity.class);
                         Bundle params = new Bundle();
                         params.putInt("id", produto.getId());
+                        params.putString("foto", produto.getFoto());
+                        params.putString("obs", produto.getObs());
+                        params.putDouble("valor", produto.getValor());
+                        params.putString("codigo", produto.getCodigo());
+                        params.putString("receita", produto.getReceita());
                         it.putExtras(params);
                         startActivity(it);
                     }
@@ -133,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
                 produto.setNome(jsonObject.getString("nome"));
                 produto.setFoto(jsonObject.getString("foto"));
                 produto.setObs(jsonObject.getString("obs"));
+                produto.setCodigo(jsonObject.getString("codigo"));
+                produto.setReceita(jsonObject.getString("receita"));
                 //Adicionar produto no List
                 produtos.add(produto);
 

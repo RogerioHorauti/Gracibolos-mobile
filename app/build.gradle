@@ -27,13 +27,15 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:design:23.2.1'
+    compile 'com.android.support:design:23.2.1' //Material disign
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'  //Biblioteca para
     compile 'com.google.code.gson:gson:2.2.4' // Biblioteca para conversão de objetos json
     compile "com.squareup.picasso:picasso:2.4.0"  // Bobioteca para carregar as imagens
 
     compile 'com.android.support:cardview-v7:23.2.0'
     compile 'com.android.support:recyclerview-v7:23.2.0'
+
+    compile 'com.inthecheesefactory.thecheeselibrary:adjustable-imageview:1.0.0'//Ajustar imagens
 
 
 }
