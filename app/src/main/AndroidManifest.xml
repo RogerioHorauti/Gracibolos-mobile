@@ -17,6 +17,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
+
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -25,12 +26,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OneFragment" />
-        <activity android:name=".TwoFragment" />
+
+        <!--<activity android:name=".OneFragment" />
+        <activity android:name=".TwoFragment" />-->
+
         <activity
             android:name=".SaidaActivity"
             android:label="@string/title_activity_saida"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--
+                especifique a atividade pai como o valor de android.support.PARENT_ACTIVITY ,
+                combinando com o atributo android:parentActivityName.
+                A ação de clique deve ser tratada no método onOptionsItemSelected da seguinte forma:
+            -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>
