@@ -23,6 +23,7 @@ public class SaidaActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private Bundle params;
+    private Intent it;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,31 +43,30 @@ public class SaidaActivity extends AppCompatActivity {
 
     }
 
-    //one - produto
-    private Fragment createCustonFragment() {
-        Intent it = getIntent();
+    //Recupero o objeto produto do Boudle
+    private Bundle getParams(){
+        this.it = getIntent();
         if (it != null) {
-            params = it.getExtras();
-            if (params != null) {
-
-                //this.msg = params.getString("mensagem");
-                //this.num1 = params.getString("numero1");
-                //this.num2 = params.getString("numero2");
-            }
+            this.params = it.getExtras();
         }
+        return this.params;
+    }
 
-        //Log.i("exemplo", "Mensagem: " + this.msg);
+    //OneFragment - produto
+    private Fragment createCustonFragment() {
 
         final Fragment oneFragment = new OneFragment();
-        oneFragment.setArguments(params);
-
+        //Repasso o objeto produto
+        oneFragment.setArguments(getParams());
         return oneFragment;
     }
 
-    //two - receita
+    //TwoFragment - receita
     private Fragment createCustonFragmentReceita() {
-        final Fragment twoFragment = new TwoFragment();
 
+        final Fragment twoFragment = new TwoFragment();
+        //Repasso o objeto produto
+        twoFragment.setArguments(getParams());
         return twoFragment;
     }
 

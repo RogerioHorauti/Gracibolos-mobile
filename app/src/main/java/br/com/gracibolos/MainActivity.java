@@ -32,20 +32,18 @@ public class MainActivity extends AppCompatActivity {
     private List<Produto> listaProdutos = null;
     private ProgressDialog pDialog;
     private ListView listView;
-    Produto p;
-    Toolbar toolbar;
-    ActionBar actionBar;
+    private Produto p;
+    private Toolbar toolbar;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //
         toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(toolbar);
 
-        //
         actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -87,16 +85,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                         Produto produto = produtosAdapter.getItem(position);
-                        //alerta(produto.getNome());
 
                         Intent it = new Intent(MainActivity.this, SaidaActivity.class);
                         Bundle params = new Bundle();
-                        params.putInt("id", produto.getId());
-                        params.putString("foto", produto.getFoto());
-                        params.putString("obs", produto.getObs());
-                        params.putDouble("valor", produto.getValor());
-                        params.putString("codigo", produto.getCodigo());
-                        params.putString("receita", produto.getReceita());
+                        //Seto o objeto produto no Bundle
+                        params.putSerializable("produto", produto);
+
                         it.putExtras(params);
                         startActivity(it);
                     }

@@ -2,18 +2,15 @@ package br.com.gracibolos;
 
 
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 public class OneFragment extends Fragment {
 
     public OneFragment() {
-
     }
 
     @Override
@@ -32,12 +29,8 @@ public class OneFragment extends Fragment {
         Bundle params = this.getArguments();
         //Bundle não nulo
         if (params != null) {
-            //this.msg = params.getString("num1");
-            //this.msg = params.getString("mensagem");
-            //this.num2 = params.getString("numero2");
-            //Log.i("exemplo", msg);
-            //TextView textViewNum1 = (TextView) view.findViewById(R.id.textViewSaida1);
-            //textViewNum1.setText(msg);
+            Produto p = (Produto) params.getSerializable("produto");
+            Log.i("rest", p.getNome());
         }
 
         return view;
