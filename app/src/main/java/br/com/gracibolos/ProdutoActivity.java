@@ -43,6 +43,7 @@ public class ProdutoActivity extends AppCompatActivity {
                 Picasso.with(ProdutoActivity.this)
                         .load(new Url().getUrl() + "/resources/img/produtos/" + params.getString("foto"))
                         .into(imageView);
+
                 textViewObs.setText(params.getString("obs"));
                 textViewCodigo.setText(params.getString("codigo"));
                 textViewPreco.setText(String.valueOf(params.getDouble("valor")));

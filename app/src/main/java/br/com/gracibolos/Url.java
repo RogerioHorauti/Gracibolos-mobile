@@ -12,6 +12,7 @@ public class Url
         //this.url = "http://192.168.46.19:8080/Gracibolos";
         //this.url = "http://172.20.22.219:8080/Gracibolos";
         this.url = "http://192.168.1.107:8080/Gracibolos";
+        //this.url = "http://172.20.25.19:8080/Gracibolos";
 
         return this.url;
     }

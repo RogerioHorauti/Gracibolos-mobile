@@ -4,6 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -12,8 +13,9 @@ import java.util.List;
 /**
  * Created by Rogerio on 18/04/2016.
  */
-public class Produto {
+public class Produto implements Serializable{
 
+        private static final long serialVersionUID = 1L;
         private int id;
         private String foto;
         private Integer status;

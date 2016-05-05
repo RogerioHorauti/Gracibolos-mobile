@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         Produto produto = produtosAdapter.getItem(position);
                         //alerta(produto.getNome());
 
-                        Intent it = new Intent(MainActivity.this, ProdutoActivity.class);
+                        Intent it = new Intent(MainActivity.this, SaidaActivity.class);
                         Bundle params = new Bundle();
                         params.putInt("id", produto.getId());
                         params.putString("foto", produto.getFoto());
@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Enfileiramento
         ApplicationController.getInstance().addToRequestQueue(req);
+
 
     }
 
