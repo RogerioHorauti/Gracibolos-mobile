@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private Produto p;
     private Toolbar toolbar;
     private ActionBar actionBar;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar_actionbar);
         setSupportActionBar(toolbar);
 
-        actionBar = getSupportActionBar();
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+//        actionBar = getSupportActionBar();
+//        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
+//        actionBar.setDisplayHomeAsUpEnabled(true);
 
         pDialog = new ProgressDialog(this);
         // Mostrando diálogo de progresso antes de fazer pedido http
@@ -173,9 +174,16 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        //Atualizar a activity
+        if (id == R.id.action_atualizar) {
+            intent = getIntent();
+            finish();
+            startActivity(intent);
             return true;
+        //Sair da activity
+        }else if(id == R.id.action_sair){
+            intent = getIntent();
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
