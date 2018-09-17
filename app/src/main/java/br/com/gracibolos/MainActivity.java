@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 produto.setFoto(jsonObject.getString("foto"));
                 produto.setObs(jsonObject.getString("obs"));
                 produto.setCodigo(jsonObject.getString("codigo"));
-                produto.setReceita(jsonObject.getString("receita"));
+                produto.setReceita(jsonObject.getString("rec"));
                 //Adicionar produto no List
                 produtos.add(produto);
 
